@@ -10,10 +10,10 @@ class UserBloc extends Bloc<UserEvent, UserState> {
     on((event, emit) async {
       int skip = 0;
       List<User> userList = [];
+      emit(const UserLoading());
       UserModel? userModelList = await apiService.fetchUserList(skip);
 
       while (userList.length != userModelList!.total) {
-        emit(UserLoading(skip));
         var temp = userModelList.users;
         userList.addAll(temp);
         skip = userModelList.skip + userModelList.limit;
