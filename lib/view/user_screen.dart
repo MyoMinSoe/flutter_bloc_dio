@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc_with_dio/loading_widget.dart';
 import 'package:flutter_bloc_with_dio/model/user.dart';
 import 'package:flutter_bloc_with_dio/respository/api_service.dart';
 import 'package:flutter_bloc_with_dio/view_model/user_bloc.dart';
@@ -27,7 +28,11 @@ class UserListScreen extends StatelessWidget {
     return BlocBuilder<UserBloc, UserState>(
       builder: (context, state) {
         if (state is UserLoading) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+              child: Padding(
+            padding:  EdgeInsets.all(20),
+            child: LoadingWidget(),
+          ));
         } else if (state is UserLoaded) {
           List<User> userList = state.userList;
           return ListView.builder(
@@ -38,7 +43,8 @@ class UserListScreen extends StatelessWidget {
                   title: Text(
                       '${userList[index].firstName} ${userList[index].lastName}'),
                   subtitle: Text(userList[index].email),
-                  trailing: Text(userList[index].id.toString()),
+                  trailing:
+                      CircleAvatar(child: Text(userList[index].id.toString())),
                 ),
               );
             },
