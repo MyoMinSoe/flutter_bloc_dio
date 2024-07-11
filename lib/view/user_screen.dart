@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_with_dio/loading_widget.dart';
-import 'package:flutter_bloc_with_dio/model/user.dart';
-import 'package:flutter_bloc_with_dio/respository/api_service.dart';
-import 'package:flutter_bloc_with_dio/view_model/user_bloc.dart';
-import 'package:flutter_bloc_with_dio/view_model/user_event.dart';
-import 'package:flutter_bloc_with_dio/view_model/user_state.dart';
+
+import '../loading_widget.dart';
+import '../model/user.dart';
+import '../respository/api_service.dart';
+import '../view_model/user_bloc.dart';
+import '../view_model/user_event.dart';
+import '../view_model/user_state.dart';
 
 class UserScreen extends StatelessWidget {
   final ApiService apiService = ApiService();
@@ -30,7 +31,7 @@ class UserListScreen extends StatelessWidget {
         if (state is UserLoading) {
           return const Center(
               child: Padding(
-            padding:  EdgeInsets.all(20),
+            padding: EdgeInsets.all(20),
             child: LoadingWidget(),
           ));
         } else if (state is UserLoaded) {

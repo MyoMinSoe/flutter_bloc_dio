@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_bloc_with_dio/model/user.dart';
-import 'package:flutter_bloc_with_dio/respository/api_service.dart';
-import 'package:flutter_bloc_with_dio/view_model/user_event.dart';
-import 'package:flutter_bloc_with_dio/view_model/user_state.dart';
+
+import '../model/user.dart';
+import '../respository/api_service.dart';
+import 'user_event.dart';
+import 'user_state.dart';
 
 class UserBloc extends Bloc<UserEvent, UserState> {
   final ApiService apiService;

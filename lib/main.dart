@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc_with_dio/view/user_screen.dart';
+
+import 'view/user_screen.dart';
 
 void main() => runApp(const MyApp());
 

@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_bloc_with_dio/model/user.dart';
+
+import '../model/user.dart';
 
 abstract class UserState extends Equatable {
   const UserState();

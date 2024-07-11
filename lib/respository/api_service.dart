@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_bloc_with_dio/model/user.dart';
+
+import '../model/user.dart';
 
 class ApiService {
   final Dio _dio = Dio()..options.baseUrl = 'http://dummyjson.com/';
