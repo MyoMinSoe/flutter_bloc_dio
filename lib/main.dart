@@ -13,6 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       home: Scaffold(
           appBar: AppBar(
+            backgroundColor: Colors.white,
+            scrolledUnderElevation: 0,
             title: const Text('Material App Bar'),
           ),
           body: UserScreen()),
